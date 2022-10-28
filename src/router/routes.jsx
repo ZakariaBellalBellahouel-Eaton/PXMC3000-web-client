@@ -1,9 +1,11 @@
-import { HomePage, PageOne, PageTwo } from '../pages';
+import { HomePage, PageOne, PageTwo, DeviceInformationPage } from '../pages';
 import Home from '@mui/icons-material/Home';
 import LooksOne from '@mui/icons-material/LooksOne';
 import LooksTwo from '@mui/icons-material/LooksTwo';
+import InfoIcon from '@mui/icons-material/Info';
 
-export const PAGES = [
+
+export const PAGES =  [
     {
         title: 'Home Page',
         route: '',
@@ -22,4 +24,10 @@ export const PAGES = [
         component: PageTwo,
         icon: LooksTwo,
     },
+    {
+        title: 'Device Information',
+        route: 'device-information',
+        component: DeviceInformationPage,
+        icon: InfoIcon,
+    }
 ];

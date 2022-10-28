@@ -34,8 +34,8 @@ export const NavigationDrawer = () => {
             activeItem={selected}
         >
             <DrawerHeader
-                title={'Brightlayer UI'}
-                subtitle={'React Project'}
+                title={'PXMC'}
+                subtitle={'3000'}
                 icon={<Menu />}
                 onIconClick={() => {
                     setDrawerOpen(!drawerOpen);

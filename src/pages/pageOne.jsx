@@ -15,7 +15,7 @@ export const PageOne = () => {
     const md = useMediaQuery(theme.breakpoints.up('md'));
     const securityHelper = useSecurityActions();
 
-    const logOut = (): void => {
+    const logOut = () => {
         LocalStorage.clearAuthCredentials();
         securityHelper.onUserNotAuthenticated();
     };
