@@ -1,0 +1,31 @@
+# Node.js with React
+# Build a Node.js project that uses React.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    # Force is used since BrightLayer UI have some broken dependencies.
+    npm install react-scripts --force
+    npm run build
+  displayName: 'npm install and build'
+- script: |
+    cp -R $(Build.SourcesDirectory)/build/ $(Build.ArtifactStagingDirectory)/
+  displayName: 'Copy compiled files'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'SmpUI'
+    publishLocation: 'Container'
+  displayName: 'Publish built React Application'
