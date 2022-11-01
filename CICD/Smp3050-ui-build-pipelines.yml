@@ -16,6 +16,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install react-scripts
+    # Force is used since BrightLayer UI have some broken dependencies.
+    npm install react-scripts --force
     npm run build
   displayName: 'npm install and build'
