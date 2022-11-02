@@ -101,6 +101,7 @@ function DeviceInformation() {
     );
 
     if (deviceinformations) {
+        console.log(deviceinformations)
         return (
             <div>
                 {deviceinformations.map((deviceinformation) => (
