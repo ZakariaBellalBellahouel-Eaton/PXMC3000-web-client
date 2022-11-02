@@ -17,7 +17,7 @@ steps:
 
 - script: |
     # Force is used since BrightLayer UI have some broken dependencies.
-    npm install --save --force react-scripts @brightlayer-ui/react-auth-shared date-fns@^2.19.0 i18next@^20.1.0 react@^17.0.0 react-i18next@^11.8.11
+    npm install --legacy-peer-deps
     npm run build
   displayName: 'npm install & dependencies & build'
 - script: |
