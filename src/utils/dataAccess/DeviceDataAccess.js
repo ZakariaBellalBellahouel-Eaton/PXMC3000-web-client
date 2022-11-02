@@ -12,6 +12,8 @@ export function useGetDeviceInformation() {
         axios.get(getDeviceInformationUrl)
             .then(response => {
                 setDeviceInformation(response.data)
+                console.log("I'm inside the get")
+                console.log(response.data)
             })
     }, [getDeviceInformationUrl]);
     return (deviceinformations);
