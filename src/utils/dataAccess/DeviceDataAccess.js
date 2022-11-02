@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 
 
 export function useGetDeviceInformation() {
-    const getDeviceInformationUrl = 'http://SmpApplication:8000/DeviceInformation';
+    const getDeviceInformationUrl = '/DeviceInformation';
     const [deviceinformations, setDeviceInformation] = useState(null);
 
 
