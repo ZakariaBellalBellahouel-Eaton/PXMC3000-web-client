@@ -6,7 +6,7 @@ const basicurl = process.env.ApiUrl || '';
 
 export function useGetDeviceInformation() {
     console.log("Yeh I hit the useGetDeviceInformation")
-    const getDeviceInformationUrl = basicurl + 'http://localhost:8000/api/v1/DeviceInformation';
+    const getDeviceInformationUrl = basicurl + '/api/v1/DeviceInformation';
     const [deviceinformations, setDeviceInformation] = useState(null);
 
 
