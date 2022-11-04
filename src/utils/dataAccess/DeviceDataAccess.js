@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react'
 
+const basicurl = process.env.ApiUrl || ''; 
+
 
 export function useGetDeviceInformation() {
     console.log("Yeh I hit the useGetDeviceInformation")
-    const getDeviceInformationUrl = '/DeviceInformation';
+    const getDeviceInformationUrl = basicurl + 'http://localhost:8000/api/v1/DeviceInformation';
     const [deviceinformations, setDeviceInformation] = useState(null);
 
 
