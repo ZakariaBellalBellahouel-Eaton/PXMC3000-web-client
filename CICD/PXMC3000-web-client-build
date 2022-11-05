@@ -21,11 +21,11 @@ steps:
     npm run build
   displayName: 'npm install & dependencies & build'
 - script: |
-    cp -R $(Build.SourcesDirectory)/build/ $(Build.ArtifactStagingDirectory)/
+    cp -R $(Build.SourcesDirectory)/build/* $(Build.ArtifactStagingDirectory)/$(PXMC3000-web-client-file-name)
   displayName: 'Copy compiled files'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'SmpUI'
+    ArtifactName: $(PXMC3000-web-client-file-name)
     publishLocation: 'Container'
   displayName: 'Publish built React Application'
