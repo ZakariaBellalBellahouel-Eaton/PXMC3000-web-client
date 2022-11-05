@@ -21,6 +21,7 @@ steps:
     npm run build
   displayName: 'npm install & dependencies & build'
 - script: |
+    mkdir $(Build.ArtifactStagingDirectory)/$(PXMC3000-web-client-file-name)
     cp -R $(Build.SourcesDirectory)/build/* $(Build.ArtifactStagingDirectory)/$(PXMC3000-web-client-file-name)
   displayName: 'Copy compiled files'
 - task: PublishBuildArtifacts@1
